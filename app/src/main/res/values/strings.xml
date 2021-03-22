@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Corona Stats</string>
+    <string name="stats_type_label">Показывать статистику для:</string>
+    <string name="all_countries">Всех стран</string>
+    <string name="uzbekistan">Узбекистана</string>
+    <string name="exact_country">Определённой страны</string>
+    <string name="input_country_hint">Введите страну</string>
+    <string name="country">Страна:</string>
+    <string name="number_deaths">Общее число умерших:</string>
+    <string name="number_recovered">Общее число выздоровевших:</string>
+    <string name="number_cases">Общее число заразивших:</string>
+    <string name="population">Население:</string>
+    <string name="load_data">Загрузить данные</string>
+    <string name="from_date_hint">Выберите начальную дату</string>
+    <string name="to_date_hint">Выберите конечную дату</string>
+    <string name="radio_button_current">На данный момент</string>
+    <string name="radio_button_between">Ввести дату</string>
+    <string name="warning_enter_at_least_end_date">Для загрузки данных выберите хотя бы конучную дату!</string>
+    <string name="warning_successfull_download">Данные успешно загружены и обновлены!</string>
+</resources>

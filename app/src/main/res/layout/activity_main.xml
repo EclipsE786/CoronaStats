@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green_dark"
+    tools:context=".screens.info.CoronaInfoActivity">
+
+    <TextView
+        android:id="@+id/textViewStatsTypeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_weight="1"
+        android:text="@string/stats_type_label"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupStatsType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewStatsTypeLabel">
+
+        <RadioButton
+            android:id="@+id/radioButtonAll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:onClick="onClickChangeStatsType"
+            android:text="@string/all_countries"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/radioButtonExactCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClickChangeStatsType"
+            android:text="@string/exact_country"
+            android:textColor="@color/white" />
+
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/checkBoxUzbekistan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:checked="false"
+        android:text="@string/uzbekistan"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/editTextCountry"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupStatsType" />
+
+    <EditText
+        android:id="@+id/editTextCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/input_country_hint"
+        android:textColor="@color/white"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/white"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupStatsType" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineCenter">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/green_plant"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:id="@+id/textViewCountryLabel"
+                style="@style/TextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/country"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewCountry"
+                style="@style/TextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@+id/textViewCountryLabel"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Uzbekistan" />
+
+            <TextView
+                android:id="@+id/textViewPopulationLabel"
+                style="@style/TextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/population"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewCountry" />
+
+            <TextView
+                android:id="@+id/textViewPopulation"
+                style="@style/TextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@+id/textViewPopulationLabel"
+                app:layout_constraintTop_toBottomOf="@+id/textViewCountry"
+                tools:text="1000000" />
+
+            <TextView
+                android:id="@+id/textViewCasesLabel"
+                style="@style/TextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/number_cases"
+                android:textColor="@android:color/holo_orange_light"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewPopulation" />
+
+            <TextView
+                android:id="@+id/textViewCases"
+                style="@style/TextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_orange_light"
+                app:layout_constraintStart_toEndOf="@+id/textViewCasesLabel"
+                app:layout_constraintTop_toBottomOf="@+id/textViewPopulation"
+                tools:text="500" />
+
+            <TextView
+                android:id="@+id/textViewRecoveredLabel"
+                style="@style/TextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/number_recovered"
+                android:textColor="@android:color/holo_green_light"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewCases" />
+
+            <TextView
+                android:id="@+id/textViewRecovered"
+                style="@style/TextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_green_light"
+                app:layout_constraintStart_toEndOf="@+id/textViewRecoveredLabel"
+                app:layout_constraintTop_toBottomOf="@+id/textViewCases"
+                tools:text="200" />
+
+            <TextView
+                android:id="@+id/textViewDeathsLabel"
+                style="@style/TextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/number_deaths"
+                android:textColor="@android:color/holo_red_dark"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewRecovered" />
+
+            <TextView
+                android:id="@+id/textViewDeaths"
+                style="@style/TextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_red_dark"
+                app:layout_constraintStart_toEndOf="@+id/textViewDeathsLabel"
+                app:layout_constraintTop_toBottomOf="@+id/textViewRecovered"
+                tools:text="30" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonDownloadData"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:clickable="true"
+        android:background="@drawable/round_button"
+        android:onClick="onClickDownloadData"
+        android:text="@string/load_data"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutDates"
+        android:focusable="true" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupDates"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxUzbekistan">
+
+        <RadioButton
+            android:id="@+id/radioButtonCurrent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:onClick="onClickChangeStatsType"
+            android:text="@string/radio_button_current"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/radioButtonBetween"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClickChangeStatsType"
+            android:text="@string/radio_button_between"
+            android:textColor="@color/white" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutDates"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupDates">
+
+        <TextView
+            android:id="@+id/textViewFromDate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/holo_green_light"
+            android:gravity="center"
+            android:onClick="onClickAddFromDate"
+            android:padding="6dp"
+            android:text="@string/from_date_hint"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textViewToDate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/holo_green_dark"
+            android:gravity="center"
+            android:onClick="onClickAddToDate"
+            android:padding="6dp"
+            android:text="@string/to_date_hint"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
